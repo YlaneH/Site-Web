@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>So Hot | Paninis grilles & milkshakes a Gentilly</title>
+<meta name="description" content="So Hot a Gentilly. Paninis ultra-gourmands et milkshakes onctueux a commander en ligne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@600;700&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0907;
+  --bg2:#15120D;
+  --ink:#F6F0E4;
+  --muted:#B6A891;
+  --line:rgba(255,255,255,0.12);
+  --fire:#FF4A0A;
+  --amber:#F5A623;
+  --gold:#FFD469;
+  --max:1240px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Sora',sans-serif;
+  background:radial-gradient(circle at 80% -20%,rgba(255,74,10,0.18),transparent 45%),radial-gradient(circle at 10% 120%,rgba(245,166,35,0.12),transparent 50%),var(--bg);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.2;
+  z-index:-1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+}
+
+.shell{width:min(var(--max),92vw);margin:0 auto;}
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter:blur(12px);
+  background:rgba(10,9,7,0.72);
+  border-bottom:1px solid var(--line);
+}
+
+.topbar .shell{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.5rem;
+}
+
+.brand{
+  text-decoration:none;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  gap:.85rem;
+}
+
+.brand-mark{
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,255,255,.2);
+  display:grid;
+  place-items:center;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.2rem;
+  letter-spacing:.08em;
+  color:var(--gold);
+  background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+}
+
+.brand-text{
+  font-family:'Bebas Neue',sans-serif;
+  letter-spacing:.12em;
+  font-size:1.4rem;
+  line-height:1;
+}
+
+.brand-sub{
+  display:block;
+  font-size:.62rem;
+  letter-spacing:.2em;
+  color:var(--muted);
+  margin-top:.2rem;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:1.2rem;
+}
+
+.nav a{
+  color:var(--ink);
+  text-decoration:none;
+  font-size:.8rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  opacity:.8;
+  transition:opacity .25s,color .25s;
+}
+
+.nav a:hover{opacity:1;color:var(--gold);}
+
+.btn{
+  border:1px solid transparent;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:.75rem;
+  font-weight:600;
+  padding:.95rem 1.4rem;
+  transition:transform .2s ease,box-shadow .25s ease,border-color .25s ease;
+}
+
+.btn-primary{
+  color:#fff;
+  background:linear-gradient(110deg,var(--fire),var(--amber));
+  box-shadow:0 10px 28px rgba(255,74,10,.28);
+}
+
+.btn-primary:hover{transform:translateY(-2px);}
+
+.btn-ghost{
+  color:var(--ink);
+  border-color:var(--line);
+  background:rgba(255,255,255,.03);
+}
+
+.btn-ghost:hover{border-color:rgba(255,255,255,.28);}
+
+.hero{
+  padding:4.5rem 0 4rem;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:2.2rem;
+  align-items:end;
+}
+
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  font-size:.65rem;
+  text-transform:uppercase;
+  letter-spacing:.28em;
+  color:var(--gold);
+}
+
+.hero-eyebrow::before{
+  content:'';
+  width:24px;
+  height:1px;
+  background:var(--gold);
+}
+
+.hero h1{
+  margin-top:1.2rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.1rem,7.8vw,6.5rem);
+  font-weight:700;
+  line-height:.94;
+  letter-spacing:-.015em;
+}
+
+.hero h1 span{color:var(--gold);font-style:italic;}
+
+.hero-lead{
+  margin-top:1.2rem;
+  max-width:58ch;
+  color:var(--muted);
+  line-height:1.85;
+  font-size:.96rem;
+}
+
+.hero-actions{
+  margin-top:1.8rem;
+  display:flex;
+  gap:.75rem;
+  flex-wrap:wrap;
+}
+
+.cross-sell{
+  margin-top:.95rem;
+  font-size:.82rem;
+  letter-spacing:.04em;
+  color:var(--gold);
+  max-width:52ch;
+}
+
+.proof-row{
+  margin-top:2.2rem;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.65rem;
+}
+
+.proof{
+  border:1px solid var(--line);
+  background:linear-gradient(140deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+  padding:.95rem;
+  min-height:86px;
+}
+
+.proof strong{
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.25rem;
+  letter-spacing:.08em;
+  color:var(--gold);
+}
+
+.proof span{
+  display:block;
+  margin-top:.25rem;
+  color:var(--muted);
+  font-size:.77rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.hero-visual{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:220px 220px;
+  gap:.6rem;
+}
+
+.shot{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.shot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.02);
+  filter:saturate(1.05) contrast(1.03);
+}
+
+.shot-main{grid-row:1/3;}
+
+.shot::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.45),transparent 52%);
+}
+
+.shot-label{
+  position:absolute;
+  left:.8rem;
+  bottom:.8rem;
+  z-index:2;
+  font-size:.62rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#F4ECE0;
+}
+
+.ticker{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.02);
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.ticker-track{
+  display:inline-flex;
+  gap:1.6rem;
+  padding:.95rem 0;
+  min-width:200%;
+  animation:ticker 20s linear infinite;
+}
+
+.ticker-track span{
+  font-family:'Bebas Neue',sans-serif;
+  letter-spacing:.15em;
+  font-size:1rem;
+  color:rgba(246,240,228,.92);
+}
+
+.ticker-track .dot{color:rgba(255,212,105,.5);}
+
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+section{padding:5.6rem 0;}
+
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:1rem;}
+
+.kicker{
+  font-size:.62rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+
+.title{
+  margin-top:.55rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.4rem,6vw,4.8rem);
+  line-height:.95;
+}
+
+.title em{font-style:italic;color:var(--fire);}
+
+.subtitle{
+  max-width:60ch;
+  color:var(--muted);
+  line-height:1.8;
+  margin-top:.9rem;
+  font-size:.93rem;
+}
+
+.features{
+  margin-top:2.1rem;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.7rem;
+}
+
+.feature{
+  border:1px solid var(--line);
+  background:var(--bg2);
+  padding:1.35rem 1.2rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.feature::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  height:2px;
+  width:100%;
+  background:linear-gradient(to right,var(--fire),transparent);
+}
+
+.feature h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.25rem;
+  letter-spacing:.1em;
+  color:var(--gold);
+}
+
+.feature p{
+  margin-top:.5rem;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:.86rem;
+}
+
+.gallery{
+  margin-top:2rem;
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:.7rem;
+}
+
+.gallery .shot{min-height:180px;}
+.gallery .g1{grid-column:span 6;min-height:360px;}
+.gallery .g2{grid-column:span 6;}
+.gallery .g3{grid-column:span 12;min-height:260px;}
+
+.practical{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:1rem;
+  margin-top:2rem;
+}
+
+.panel{
+  border:1px solid var(--line);
+  background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(255,255,255,.015));
+  padding:1.6rem;
+}
+
+.panel h3{
+  font-family:'Bebas Neue',sans-serif;
+  letter-spacing:.12em;
+  font-size:1.2rem;
+  color:var(--gold);
+}
+
+.hours{margin-top:1rem;}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.78rem 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  font-size:.88rem;
+}
+
+.row .day{color:var(--muted);}
+.row .time{color:var(--ink);}
+
+.contact-list{
+  margin-top:1rem;
+  display:grid;
+  gap:.7rem;
+}
+
+.contact-item{
+  padding:.85rem .9rem;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.02);
+  font-size:.86rem;
+  line-height:1.65;
+  color:var(--ink);
+}
+
+.contact-item a{color:var(--gold);text-decoration:none;}
+
+.final{
+  text-align:center;
+  padding:6.8rem 0 7.6rem;
+}
+
+.final .title{max-width:12ch;margin:0 auto;}
+.final p{color:var(--muted);margin:1rem auto 1.8rem;max-width:54ch;line-height:1.8;}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:1.25rem 0;
+  color:var(--muted);
+  font-size:.73rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.foot{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media (max-width:980px){
+  .nav a{display:none;}
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{grid-template-rows:220px 180px;}
+  .proof-row{grid-template-columns:1fr 1fr;}
+  .features{grid-template-columns:1fr 1fr;}
+  .gallery .g1,.gallery .g2,.gallery .g3{grid-column:span 12;min-height:220px;}
+  .practical{grid-template-columns:1fr;}
+}
+
+@media (max-width:640px){
+  .topbar .shell{min-height:68px;}
+  .btn{width:100%;}
+  .hero-actions{display:grid;grid-template-columns:1fr;}
+  .proof-row{grid-template-columns:1fr;}
+  .features{grid-template-columns:1fr;}
+  .hero{padding:3.7rem 0 3.4rem;}
+  .title{line-height:1.02;}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="shell">
+    <a href="#top" class="brand" aria-label="So Hot accueil">
+      <span class="brand-mark">SH</span>
+      <span>
+        <strong class="brand-text">SO HOT</strong>
+        <span class="brand-sub">GENTILLY 94250</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#concept">Incontournables</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#infos">Infos</a>
+      <a href="#commande">Commander</a>
+      <a href="https://order.sohot-restaurant.com/" target="_blank" class="btn btn-primary">Je craque pour mon duo chaud-froid</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero shell">
+    <div class="hero-grid">
+      <div class="reveal">
+        <span class="hero-eyebrow">Paninis grilles + milkshakes a Gentilly</span>
+        <h1>
+          Le chaud qui croustille.<br>
+          <span>Le froid qui secoue. Le kiff total.</span>
+        </h1>
+        <p class="hero-lead">
+          Pain dore minute, fromage qui file, sauces qui claquent. Puis le contre-choc parfait: un milkshake epais, glace et ultra-cremeux. Chez SO HOT, tu ne choisis pas entre chaud et froid, tu prends les deux.
+        </p>
+        <div class="hero-actions">
+          <a href="https://order.sohot-restaurant.com/" target="_blank" class="btn btn-primary">Griller mon panini maintenant</a>
+          <a href="#infos" class="btn btn-ghost">Voir les horaires</a>
+        </div>
+        <p class="cross-sell">Un panini sans milkshake? Non. Ajoute ton shake, toppings au sommet, et transforme ton repas en vrai moment de kiff.</p>
+        <div class="proof-row">
+          <div class="proof">
+            <strong>4,6 / 5</strong>
+            <span>Note Google</span>
+          </div>
+          <div class="proof">
+            <strong>53 avis</strong>
+            <span>Avis clients</span>
+          </div>
+          <div class="proof">
+            <strong>01 89 13 87 38</strong>
+            <span>Contact direct</span>
+          </div>
+          <div class="proof">
+            <strong>1 Rue Albert Guilpin</strong>
+            <span>94250 Gentilly</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <article class="shot shot-main">
+          <img src="SoHot3.jpg" alt="Plateaux de paninis servis">
+          <span class="shot-label">En salle</span>
+        </article>
+        <article class="shot">
+          <img src="Sohot2jpg.jpg" alt="Paninis alignes sur table">
+          <span class="shot-label">Selection</span>
+        </article>
+        <article class="shot">
+          <img src="SoHot.jpg" alt="Panini grille en gros plan">
+          <span class="shot-label">Grille</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Paninis grilles</span><span class="dot">•</span>
+      <span>Milkshakes onctueux</span><span class="dot">•</span>
+      <span>Toppings gourmands</span><span class="dot">•</span>
+      <span>Commande en ligne</span><span class="dot">•</span>
+      <span>01 89 13 87 38</span><span class="dot">•</span>
+      <span>1 Rue Albert Guilpin, Gentilly</span><span class="dot">•</span>
+      <span>4,6 sur Google</span><span class="dot">•</span>
+      <span>Paninis grilles</span><span class="dot">•</span>
+      <span>Milkshakes onctueux</span><span class="dot">•</span>
+      <span>Toppings gourmands</span><span class="dot">•</span>
+      <span>Commande en ligne</span><span class="dot">•</span>
+      <span>01 89 13 87 38</span><span class="dot">•</span>
+      <span>1 Rue Albert Guilpin, Gentilly</span><span class="dot">•</span>
+      <span>4,6 sur Google</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <section id="concept">
+    <div class="shell">
+      <div class="section-top reveal">
+        <div>
+          <p class="kicker">Les incontournables</p>
+          <h2 class="title">La carte qui frappe fort,<br><em>bouchee apres bouchee.</em></h2>
+        </div>
+      </div>
+      <p class="subtitle reveal">
+        Ici, tout est pense pour une seule chose: te donner faim maintenant. Le croustillant, le fondant, le glace, le gourmand. Tu commandes, tu croques, tu recommences.
+      </p>
+
+      <div class="features reveal">
+        <article class="feature">
+          <h3>Le Grille</h3>
+          <p>Un pain marque au grill, croustillant dehors, moelleux dedans. A l'ouverture: fromage fondant, viande bien chaude, saveurs qui coulent a chaque bouchee.</p>
+        </article>
+        <article class="feature">
+          <h3>Le Givre</h3>
+          <p>Milkshake epais, ultra-onctueux, bien frais, avec toppings qui debordent de gourmandise. Le must-have de la commande pour calmer le feu du grill.</p>
+        </article>
+        <article class="feature">
+          <h3>La Preuve</h3>
+          <p>"Le meilleur spot de Gentilly, sans debat." C'est ce que disent les clients: 4,6/5 sur Google, et des retours qui parlent de portions genereuses et de vrai gout.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie">
+    <div class="shell">
+      <div class="section-top reveal">
+        <div>
+          <p class="kicker">Galerie</p>
+          <h2 class="title">Regarde la carte en images,<br><em>et laisse ton ventre decider.</em></h2>
+        </div>
+      </div>
+      <p class="subtitle reveal">
+        Fais defiler, choisis ton mood, et visualise deja ton duo. Oui, ce milkshake qui degouline de gourmandise avec ses toppings est exactement celui que tu vas ajouter.
+      </p>
+
+      <div class="gallery reveal">
+        <article class="shot g1">
+          <img src="Sohot2jpg.jpg" alt="Vue des paninis en service">
+          <span class="shot-label">Service</span>
+        </article>
+        <article class="shot g2">
+          <img src="SoHot.jpg" alt="Panini grille">
+          <span class="shot-label">Grille</span>
+        </article>
+        <article class="shot g3">
+          <img src="SoHot3.jpg" alt="Plateaux So Hot">
+          <span class="shot-label">Table</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="infos">
+    <div class="shell">
+      <div class="section-top reveal">
+        <div>
+          <p class="kicker">Infos pratiques</p>
+          <h2 class="title">Tout pour venir,<br><em>ou commander.</em></h2>
+        </div>
+      </div>
+
+      <div class="practical">
+        <article class="panel reveal">
+          <h3>Horaires</h3>
+          <div class="hours">
+            <div class="row"><span class="day">Lun - Ven midi</span><span class="time">11h30 - 15h00</span></div>
+            <div class="row"><span class="day">Lun - Ven soir</span><span class="time">16h30 - 21h30</span></div>
+            <div class="row"><span class="day">Samedi</span><span class="time">12h00 - 22h00</span></div>
+            <div class="row"><span class="day">Dimanche</span><span class="time">Ferme</span></div>
+          </div>
+        </article>
+
+        <article class="panel reveal">
+          <h3>Coordonnees</h3>
+          <div class="contact-list">
+            <div class="contact-item">1 Rue Albert Guilpin<br>94250 Gentilly</div>
+            <div class="contact-item">Telephone: <a href="tel:0189138738">01 89 13 87 38</a></div>
+            <div class="contact-item">Commande en ligne: <a href="https://order.sohot-restaurant.com/" target="_blank">order.sohot-restaurant.com</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="commande">
+    <div class="shell reveal">
+      <p class="kicker">Duo gagnant</p>
+      <h2 class="title">Ton panini sort du grill,<br><em>ton milkshake arrive bien givre.</em></h2>
+      <p>Prends le reflexe SO HOT: chaud + froid dans la meme commande. C'est plus gourmand, plus complet, et franchement plus satisfaisant.</p>
+      <a href="https://order.sohot-restaurant.com/" target="_blank" class="btn btn-primary">Je commande mon duo maintenant</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell foot">
+    <span>So Hot - Gentilly</span>
+    <span>4,6 sur Google - 53 avis</span>
+    <span>01 89 13 87 38</span>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>
